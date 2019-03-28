@@ -1,0 +1,200 @@
+# This is a route layout definition.
+# The route definition defines which Sitecore components are present on a route,
+# what their content data is, and which _placeholder_ they are placed in.
+
+# This particular route definition is for the home route - '/', so it defines the
+# components shown on the initial page of the app.
+
+# You may use equivalent JSON files instead of YAML if you prefer;
+# however YAML is simpler to read and allows comments like this one :)
+
+# Setting an ID is optional, but it will allow referring to this item in internal links
+# the ID can be a app-wide-unique string, or a GUID value.
+id: interior-page
+
+# Route-level fields are appropriate for page level data like <title> contents
+# Define route level fields in /sitecore/definitions/routes.sitecore
+fields:
+  pageTitle: Learn About Our Company | Ferrellgas
+  metaDescription: Ferrellgas is your hometown propane provider. We&#39;re proud to be part of tight-knit communities across America. Learn more about us.
+  metaKeywords: propane, gas, clean energy, kansas city, ferrellgas
+  ogTitle: “Propane provider” doesn’t properly introduce us.
+  ogImage: https://www.ferrellgas.com/media/1161/devices2.jpg
+  ogUrl: https://www.ferrellgas.com/home/
+  ogDescription: For nearly 80 years, America has depended on Ferrellgas to be its local hometown propane provider. Trust us to fuel what matters to you.
+  ogSiteName: Ferrellgas.com
+  ogType: website
+  twitterCard: summary
+  twitterSite: "@Ferrellgas"
+  twitterTitle: Learn About Our Company | Ferrellgas
+  twitterDescription: Ferrellgas is your hometown propane provider. We&#39;re proud to be part of tight-knit communities across America. Learn more about us.
+  twitterImage: https://www.ferrellgas.com//media/1161/devices2.jpg
+# Define the page layout starting at the root placeholder - in this case, 'jss-main'
+# root placeholder names are defined in the package.json config section (required for Sitecore deployment)
+placeholders:
+  jss-global-message:
+  - componentName: GlobalMessage
+    fields:
+      heading: Q2 Earnings
+      description: Ferrellgas Partners, L.P. to hold Fiscal 2019 Q2 Earnings Call at 9:00 a.m. CST on Friday, March 8, 2019.
+      link: {
+            href: https://edge.media-server.com/m6/p/djzwcj4u,
+            text: Go to Earnings Conference Call,
+            class: global-message__cta-link
+        }
+  jss-header:
+  - componentName: MicroNav
+  - componentName: PrimaryNav
+  jss-main:
+  - componentName: HomeContent
+    placeholders:
+      jss-home-content:
+      - componentName: HeroInterior
+        fields:
+          image: {
+                src: "/data/media/img/hero_1600x200_about_us.jpg",
+                alt: About Us
+            }
+      - componentName: InteriorNav
+      - componentName: TwoColumn
+        placeholders:
+          jss-main-header:
+          - componentName: Breadcrumbs
+          jss-main-primary:
+          - componentName: Article
+            fields:
+              heading: |
+                "Propane provider" doesn’t properly introduce us.
+              article: |
+                <p>At Ferrellgas, we are in the business of providing meaningful moments, memories full of warmth, dependability you can trust, and outcomes you had only dreamed possible. Whatever your day has in store, we're here to fuel what matters to you. </p>
+                <h2>We’ve got roots here.</h2>
+                <p>Our company was founded in 1939 by a hard-working family in Atchison, Kansas. In 1939 a loaf of bread cost eight cents, Lou Gehrig announced his retirement from the New York Yankees, and the film <em>The Wizard of Oz</em> had just made its box office debut. Although a lot has changed since then, the values and work ethic that propelled a small company forward after the Great Depression still persist today. Throughout almost a century of innovation and treating customers with respect, we’ve grown to become one of the nation’s largest employee-owned propane leaders. Our story is a testament to the livelihood of the American dream, and we are proud to fuel the lives of customers all over America.</p>
+                <h2>A Culture of Giving</h2>
+                <p>We’re honored to be part of tight-knit communities across America and thousands of customers’ lives. From our nationwide coat-collection drive to our sponsorship of local athletic teams to fundraisers for fire departments, cancer patients, and churches, we are always looking for ways to give back to the <a data-id="1365" href="https://www.ferrellgas.com/our-company/community-involvement/" title="Community Involvement">communities we live in and serve</a>. As we continue to identify ways to be even better community leaders and neighbors, we encourage you to contact your local Ferrellgas office to see if there are specific programs in your area.</p>
+                <h2>Jobs at Ferrellgas</h2>
+                <p>Want to join our winning team and become a name behind the flame? Interested in a career with a nationwide, publicly traded, FORTUNE 1000 company that is the leader in its industry? At Ferrellgas, we’re always looking for hard-working, service-oriented people who are interested in joining our winning team. Visit the <a data-id="1354" href="https://www.ferrellgas.com/ferrellgas-jobs/" title="Ferrellgas Jobs">Careers section</a> of our website and search for <a data-id="1354" href="https://www.ferrellgas.com/ferrellgas-jobs/" title="Ferrellgas Jobs">job openings</a> in your community today!</p>
+                <h2>Partner with Us</h2>
+                <p>Selling a business you’ve worked hard to build though the years can be tough. There’s a lot to consider – not only from a financial standpoint, but also when it comes to how your customers will be taken care of and how your employees will be treated. At Ferrellgas, we take pride in being a partner you can trust, a partner with a long history of upholding the legacy people like you have worked so hard to build. To <a data-id="1396" href="https://www.ferrellgas.com/our-company/acquisitions/" title="Acquisitions">learn more about your options</a> and to arrange a confidential discussion with our Acquisitions team, give us a call today.</p>
+                <h2>Investment Information</h2>
+                <p>Through strategic partnerships with diverse and growth-oriented companies, we deliver rigorous results, and we do so ethically, honestly, and transparently. We take pride in this position, and the peace of mind it provides our stakeholders. <a data-id="1367" href="https://www.ferrellgas.com/our-company/investor-information/" title="Investor Information">Click here</a> for our distribution policy, tax information, and more.</p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+          jss-main-aside:
+          - componentName: LocationFinderPod
+            fields:
+              pinImage: {
+                    src: "/images/map-pin-circle.png",
+                    alt: Map Pin,
+                    class: content-pod__heading-image
+                }
+              heading: Find a Location
+              description: Enter your ZIP code to find the closest Ferrellgas provider in your area.
+              zipLabel: Zip Code
+              findNowButtonText: Find Now
+          - componentName: ContentPod
+            fields:
+              heading: Questions? We can help.
+              description: |
+                Contact us by phone or email for quotes, questions, or any assistance you might need.
+  - componentName: SiteFooter
+    fields:
+      copyright: © 2019 Ferrellgas.  All Rights Reserved
+      privacyPolicy: {
+          href: https://www.ferrellgas.com/privacy-policy/,
+          text: Privacy Policy,
+          class: legal-nav__link
+        }
+      blueRhino: {
+          href: http://www.bluerhino.com/,
+          text: Blue Rhino,
+          class: legal-nav__link,
+          target: _blank
+        }
+    placeholders:
+        jss-site-footer:
+        - componentName: SiteFooterNav
+          placeholders:
+            jss-site-footer-nav:
+              - componentName: SiteFooterNavSection
+                fields:
+                  heading: ABOUT US
+                placeholders:
+                  jss-footer-nav-section-links:
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: Our Company
+                      }
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: Investor Information
+                      }
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: Employee Login
+                      }
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: Referrals
+                      }
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: Jobs
+                      }
+              - componentName: SiteFooterNavSection
+                fields:
+                  heading: Resources
+                placeholders:
+                  jss-footer-nav-section-links:
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: MyFerrellgas
+                      }
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: Customer Support
+                      }
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: Request a Refill
+                      }
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: Sign Up for Ferrellgas
+                      }
+                  - componentName: SiteFooterNavSectionLink
+                    fields:
+                      link: {
+                        href: /,
+                        text: "Ferrellgas Blog: Tank Talk"
+                      }
+        - componentName: SiteFooterConnect
+        - componentName: ContactCTA
+          fields:
+             heading: Contact Us Today
+             description: Please call for general questions, customer service, and job inquiries.
+             button: {
+               href: https://www.ferrellgas.com/contact-us/,
+               text: CONTACT US,
+               class: button button--alt
+             }
